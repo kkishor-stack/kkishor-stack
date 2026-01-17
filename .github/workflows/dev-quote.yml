@@ -20,12 +20,12 @@ jobs:
           TIMESTAMP=$(date -u +"%Y-%m-%dT%H-%M-%S")
           sed -i "s/_=[0-9T:-]*/_=$TIMESTAMP/" README.md
 
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
+          git config user.name "Jugal-Kishor298"
+          git config user.email "kravenkishor.ai@gmail.com"
           if git diff --quiet README.md; then
             echo "No changes in README.md"
             exit 0
           fi
           git add README.md
-          git commit -m "chore: refresh dev quote image"
+          git commit -m "Update README.md - $(TZ=Asia/Kolkata date +'%Y-%m-%d %H:%M:%S IST')"
           git push
