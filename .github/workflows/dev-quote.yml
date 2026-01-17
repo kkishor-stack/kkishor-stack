@@ -1,5 +1,8 @@
 name: Update Dev Quote
 
+permissions:
+  contents: write
+  
 on:
   schedule:
     - cron: "0 0 * * *"   # daily at midnight
