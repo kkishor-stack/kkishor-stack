@@ -45,4 +45,4 @@ jobs:
 
           git add README.md
           git commit -m "chore: update daily dev quote"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
+          git push 
