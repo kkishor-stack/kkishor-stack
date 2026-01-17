@@ -3,21 +3,23 @@ name: Update Dev Quote Image
 on:
   schedule:
     - cron: "0 0 * * *" # daily at midnight UTC
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
-  update-quote-image:
+  update-readme:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - name: Update timestamp
+      - name: Update Dev Note Image
         run: |
           TIMESTAMP=$(date -u +"%Y-%m-%dT%H-%M-%S")
           sed -i "s/_=[0-9T:-]*/_=$TIMESTAMP/" README.md
 
-      - name: Commit changes if any
-        run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           if git diff --quiet README.md; then
