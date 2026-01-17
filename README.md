@@ -99,7 +99,7 @@ growth!
   <p>
     <a >
       <!-- Use https://streak-stats.demolab.com or self-host with your own Vercel app - visit https://git.io/streak-stats for instructions -->
-      <img title="🔥 Get streak stats for your profile at git.io/streak-stats" alt="Anuj Shrivastava's streak" src="https://github-readme-streak-stats-eight.vercel.app/?user=Jugal-Kishor298&theme=dark&hide_border=true&short_numbers=true"/>
+      <img title="🔥 Get streak stats for your profile at git.io/streak-stats" alt="Anuj Shrivastava's streak" src="https://github-readme-streak-stats-eight.vercel.app/?user=kkishor-stack&theme=dark&hide_border=true&short_numbers=true"/>
     </a>
     <p>
 </div>
@@ -107,8 +107,8 @@ growth!
 
 <p><h2 style="text-decoration: none; cursor: none;">📈  <span style="color: #00c2e0">Github Graph:</span></h2></p>
 
-[![Jugal Kishor's GitHub stats](https://github-readme-stats.vercel.app/api?username=Jugal-Kishor298&show_icons=true&theme=radical)]
-[![Jugal Kishor's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=Jugal-Kishor298&theme=github-compact&area=true&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
+[![Jugal Kishor's GitHub stats](https://github-readme-stats.vercel.app/api?username=kkishor-stack&show_icons=true&theme=radical)]
+[![Jugal Kishor's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=kkishor-stack&theme=github-compact&area=true&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
 <p><h2 style="text-decoration: none; cursor: none;">🏆 <span style="color: #00c2e0">GitHub Trophies:</span></h2></p>
 
