@@ -64,11 +64,11 @@ Progress > Perfection
 
 ## Daily Dev Note
 
-> _Updated automatically via GitHub Actions_
-
+<p align="center">
 <!-- DEV-QUOTE:START -->
-"Code is a liability before it is an asset. — Unknown"
+<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark&_=2026-01-17T06-51-07" alt="Dev Quote" />
 <!-- DEV-QUOTE:END -->
+</p>
 
 ---
 
