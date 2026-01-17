@@ -2,7 +2,7 @@ name: Update Dev Quote
 
 on:
   schedule:
-    - cron: "0 0 * * *"   # once daily
+    - cron: "0 0 * * *"   # daily at midnight
   workflow_dispatch:
 
 jobs:
@@ -13,14 +13,33 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Fetch quote
+        id: get_quote
         run: |
-          QUOTE=$(curl -s https://api.quotable.io/random?tags=technology,famous-quotes | jq -r '.content')
-          sed -i "/DEV-QUOTE:START/,/DEV-QUOTE:END/c\<!-- DEV-QUOTE:START -->\n\"$QUOTE\"\n<!-- DEV-QUOTE:END -->" README.md
+          # Fetch quote from API, fallback if API fails
+          RESPONSE=$(curl -s https://api.quotable.io/random?tags=technology,famous-quotes || echo '{"content":"Code is a liability before it is an asset.","author":"Unknown"}')
+          QUOTE=$(echo "$RESPONSE" | jq -r '.content // "Code is a liability before it is an asset."')
+          AUTHOR=$(echo "$RESPONSE" | jq -r '.author // "Unknown"')
+          
+          # Escape characters that break sed
+          ESCAPED_QUOTE=$(printf '%s\n' "$QUOTE — $AUTHOR" | sed 's/[\/&]/\\&/g')
+          
+          # Replace existing quote block
+          sed -i "/DEV-QUOTE:START/,/DEV-QUOTE:END/c\<!-- DEV-QUOTE:START -->\n\"$ESCAPED_QUOTE\"\n<!-- DEV-QUOTE:END -->" README.md
 
-      - name: Commit changes
+          # Output for debugging
+          echo "Quote set to: $ESCAPED_QUOTE"
+
+      - name: Commit changes if any
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
+
+          # Only commit if README changed
+          if git diff --quiet README.md; then
+            echo "No changes in README.md"
+            exit 0
+          fi
+
           git add README.md
-          git commit -m "chore: update daily dev quote" || echo "No changes"
+          git commit -m "chore: update daily dev quote"
           git push
