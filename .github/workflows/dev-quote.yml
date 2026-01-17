@@ -1,8 +1,8 @@
-name: Update Dev Quote Image
+name: Daily README Update
 
 on:
   schedule:
-    - cron: "0 0 * * *" # daily at midnight UTC
+    - cron: "30 16 * * *" 
   push:
     branches:
       - main
