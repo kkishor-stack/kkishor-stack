@@ -67,7 +67,7 @@ Progress > Perfection
 > _Updated automatically via GitHub Actions_
 
 <!-- DEV-QUOTE:START -->
-“Code is a liability before it is an asset.”
+"Code is a liability before it is an asset. — Unknown"
 <!-- DEV-QUOTE:END -->
 
 ---
