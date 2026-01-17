@@ -1,0 +1,26 @@
+name: Update Dev Quote
+
+on:
+  schedule:
+    - cron: "0 0 * * *"   # once daily
+  workflow_dispatch:
+
+jobs:
+  update-quote:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch quote
+        run: |
+          QUOTE=$(curl -s https://api.quotable.io/random?tags=technology,famous-quotes | jq -r '.content')
+          sed -i "/DEV-QUOTE:START/,/DEV-QUOTE:END/c\<!-- DEV-QUOTE:START -->\n\"$QUOTE\"\n<!-- DEV-QUOTE:END -->" README.md
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add README.md
+          git commit -m "chore: update daily dev quote" || echo "No changes"
+          git push
