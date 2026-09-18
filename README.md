@@ -66,7 +66,7 @@ Progress > Perfection
 
 <p align="center">
 <!-- DEV-QUOTE:START -->
-<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark&_=2026-09-17T19-47-51" alt="Dev Quote" />
+<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark&_=2026-09-18T19-07-26" alt="Dev Quote" />
 <!-- DEV-QUOTE:END -->
 </p>
 
